@@ -46,7 +46,7 @@
                         <td class="table-element">{{ forloop.counter }}</td>
                             <td class="table-element"><strong>{{ visit.entered_at }}</strong></td>
                         <td class="table-element">{{ visit.format_duration }}</td>
-                        {% if visit.duration > 1800 %}
+                        {% if visit.duration > 3600 %}
                               <td class="table-element" style="color:#dc143c"><strong>CHECK</strong></td>
                         {% else %}
                               <td class="table-element" style="color:#3cb371"><strong>OK</strong></td>

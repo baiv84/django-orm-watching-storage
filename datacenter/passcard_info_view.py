@@ -12,7 +12,7 @@ def passcard_info_view(request, passcode):
 
     for visit in visits:
         one_passcard_visit = dict(entered_at=visit.entered_at, duration=visit.get_duration(), \
-                                  format_duration=visit.format_duration(), is_strange=visit.is_long(30))
+                                  format_duration=visit.format_duration(), is_strange=visit.is_long(60))
         this_passcard_visits.append(one_passcard_visit)
 
     context = {
