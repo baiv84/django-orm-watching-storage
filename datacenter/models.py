@@ -34,18 +34,19 @@ class Visit(models.Model):
 
     def get_duration(self):
         """Calculate duration time"""
-        moscow_enter_time = localtime(self.entered_at)
+        storage_enter_time = localtime(self.entered_at)
         if self.leaved_at:
-            moscow_leave_time = localtime(self.leaved_at)
+            storage_leave_time = localtime(self.leaved_at)
         else:
-            moscow_leave_time = localtime()
-        delta = moscow_leave_time - moscow_enter_time
+            storage_leave_time = localtime()
+        delta = storage_leave_time - storage_enter_time
         return delta.total_seconds()
 
     def format_duration(self):
         """Print duration time in string format"""
-        hours = int(self.get_duration() // 3600)
-        minutes = int((self.get_duration() % 3600) // 60)
+        duration_time = self.get_duration() 
+        hours = int(duration_time // 3600)
+        minutes = int((duration_time % 3600) // 60)
         return f'{hours}:{minutes}'
 
     def is_long(self, minutes=60):
