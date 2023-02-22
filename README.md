@@ -53,7 +53,7 @@ This command install `django` framework and `psycopg2` library into the `venv` v
 
 # Run program 
 
-    (venv) django-orm-watching-storage $ python main.py
+    (venv) django-orm-watching-storage $ python manage.py runserver 0.0.0.0:8000
 
 # Control results
 
