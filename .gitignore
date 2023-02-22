@@ -11,3 +11,4 @@ poetry.lock
 .replit
 venv
 venv/
+.env
