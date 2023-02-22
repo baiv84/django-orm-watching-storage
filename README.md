@@ -49,7 +49,7 @@ In the virtual environment run command:
 (venv) django-orm-watching-storage $  pip install -r requirements.txt
 ```
 
-This command install `django` framework and `psycopg2` library into the `venv` virtual environment.
+This command installs `django` framework, `psycopg2` and `environs` libraries into the `venv` virtual environment.
 
 # Run program 
 
