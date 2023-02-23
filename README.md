@@ -51,9 +51,83 @@ In the virtual environment run command:
 
 This command installs `django` framework, `psycopg2` and `environs` libraries into the `venv` virtual environment.
 
+# Setup environment variables
+
+To redefine program behavior, in project folder create `.env` file. 
+
+Possible options to setup are:
+
+* `DB_ENGINE` - define database backend engine. 
+
+Possible values are: 
+```
+    django.db.backends.postgresql
+
+    django.db.backends.mysql
+    
+    django.db.backends.sqlite3
+    
+    django.db.backends.oracle
+```
+
+By default, we use PostgreSQL server engine - `django.db.backends.postgresql`
+
+* `DB_HOST` - define database server hostname.
+
+By default, we use `localhost` name for server connection.
+
+* `DB_PORT` - define database server listening port.
+
+By default, we use PostgreSQL server default port - `5432`
+
+* `DB_NAME` - define database name to work with.
+
+This parameter has no default value - it has to be explicitly defined.
+
+* `DB_USER` - define database user to connect.
+
+This parameter has no default value - it has to be explicitly defined.
+
+* `DB_PASSWORD` - define database password to connect.
+
+This parameter has no default value - it has to be explicitly defined.
+
+* `SECRET_KEY` - this is used to provide cryptographic signing, and should be set to a unique, unpredictable value.
+
+By default, we use secret key value - `apollo84`
+
+* `ALLOWED_HOSTS` - list of strings representing the host/domain names that this Django site can serve.
+
+By default, we allow only localhost connections to communicate with our site - `'.localhost', '127.0.0.1'`
+
+* `DEBUG` - option to define debug mode. `True` - enable debug output, `False` - disable debug output.
+
+By default, we use `False` option value to disable debugging output.
+
+---
+Minimal set of variables in `.env` file to work with Postgresql server:
+
+```
+DB_HOST=xxxx
+DB_PORT=xxxx
+DB_NAME=xxxx
+DB_USER=xxxx
+DB_PASSWORD=xxxx
+```
+
+Before running site, fill these variables by your personal values.
+
+
 # Run program 
 
-    (venv) django-orm-watching-storage $ python manage.py runserver 0.0.0.0:8000
+To run site locally, execute command:
+
+    $ python manage.py runserver localhost:8000
+
+or:
+
+    $ python manage.py runserver 127.0.0.1:8000
+
 
 # Control results
 
